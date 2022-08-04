@@ -1,15 +1,21 @@
 .section-title-background {
   background-color: var(--color-button);
+ 
 }
 
 .team {
-  display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
 
-  &__item:not(:last-child) {
-    margin-right: 30px;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
   }
+  @media screen and (min-width: 1200px) {
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
   
   &__item {
     background-color: var(--white-color-hero);
@@ -19,6 +25,7 @@
 }
 
 .team-block {
+  width: 450px;
   &__title {
     text-align: center;
     margin-top: 30px;

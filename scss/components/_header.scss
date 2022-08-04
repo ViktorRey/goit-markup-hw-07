@@ -1,39 +1,37 @@
 .header {
-  border-bottom: 1px solid #eeeeee;
-  background-color: var(--white-color-hero);
-  height: 80px;
-  
-  &__inner {
-    display: flex;
-    align-items: center;
-  }
+    border-bottom: 1px solid #eeeeee;
+    background-color: var(--white-color-hero);
+
+    &__inner {
+      display: flex;
+      align-items: center;
+    }
+
+
 }
-
-.logo {
-  font-family: 'Raleway';
-  font-weight: 700;
-  font-size: 26px;
-  text-decoration: none;
-  color: var(--color-logo);
-}
-
-.web-logo {
-  color: var(--color-hover);
-}
-
-
 
 .menu {
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
   &__list {
     margin-left: 94px;
     display: flex;
     margin-top: 0;
     margin-bottom: 0;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+      }
   }
   &__link {
-    display: block;
     padding-top: 32px;
     padding-bottom: 32px;
+    display: block;
     color: var(--color-accent);
     font-weight: 500;
     text-decoration: none;
@@ -52,40 +50,55 @@
 }
 }
 
-.line {
-  position: relative;
+.button-mob {
+  border: none;
+  background-color: transparent;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+      }
+
+      &__cross {
+        display: none;
+      }
+    
+      &.is-open &__cross {
+        display: block;
+      }
+
+      .button-mob.is-open &__menu {
+        display: none;
+      }
+  }
+
+.logo {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 26px;
+  text-decoration: none;
+  color: var(--color-logo);
 }
 
-.menu-link-current {
+.web-logo {
   color: var(--color-hover);
 }
 
-.menu-link-current::after {
-  content: '';
-  background: #2196f3;
-  width: 100%;
-  height: 4px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-radius: 2px;
-}
-
-
 
 .contact {
-  display: flex;
+  display: block;
   margin-left: auto;
   
-  &__menu:not(:first-child) {
-    margin-left: 50px;
+  &__menu {
+    @media screen and (min-width: 1200px) {
+      display: inline-block;
+      }
   }
+
   &__link {
     align-items: center;
     display: flex;
-    padding-top: 32px;
-    padding-bottom: 32px;
-  
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -95,6 +108,11 @@
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  &__menu:not(:first-child) {
+    margin-top: 10px;
+ }
+
   &__link:hover,
   &__link:focus {
   color: var(--color-hover);
@@ -104,13 +122,16 @@
   margin-right: 10px;
   fill: currentColor;
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    }
+    
+  @media screen and (min-width: 1200px) {
+    &__menu:not(:first-child) {
+       margin-left: 50px;
+    }
+  }
 }
-
-
-
-
-
-
-
 
 

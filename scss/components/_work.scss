@@ -1,8 +1,15 @@
 .padding-reset {
   padding-top: 0;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 }
 
 .work {
+  @media screen and (max-width: 1200px) {
+  display: none;
+}
+
   display: flex;
   margin-top: 0;
   margin: 0;
